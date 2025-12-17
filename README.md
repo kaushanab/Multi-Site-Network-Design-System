@@ -1,3 +1,102 @@
-# Multi-Site-Network-Design-System
-Multi-Site Interconnected Network Design📌 Project OverviewThis project demonstrates the design and implementation of a robust, three-site enterprise network using Cisco Packet Tracer. The architecture is built to ensure high availability, scalability, and secure inter-site communication, simulating a real-world corporate environment with a Head Office (HO) and two Branch Offices (BO).🛠️ Key FeaturesThree-Site Connectivity: Seamless communication between Head Office and two remote branches.VLAN Segmentation: Logical separation of departments (HR, IT, Sales, Management) to enhance security and reduce broadcast traffic.Redundancy: Implementation of EtherChannel and HSRP (if applicable) to ensure no single point of failure.Routing Protocols: Dynamic routing using OSPF (or EIGRP) for fast convergence and scalability.Security: Standard and Extended ACLs to control traffic flow and secure VTY lines.Network Services: Centralized DHCP, DNS, and HTTP server configurations.🏗️ Network TopologyThe network consists of three main locations interconnected via a Service Provider cloud or point-to-point serial links:SiteRoleKey HardwareSite A (HQ)Core Services & Data Center2911 Router, Layer 3 Switches, ServersSite B (Branch)Regional Office2901 Router, Layer 2 Switches, End DevicesSite C (Branch)Remote Small Office1941 Router, Wireless AP, End Devices🚀 Configuration Highlights1. Layer 2 SwitchingVLANs: Assigned specific IDs for different departments.Trunking: 802.1Q encapsulation used on inter-switch links.Spanning Tree (STP): Configured PVST+ to prevent loops and optimize data paths.2. Layer 3 RoutingInter-VLAN Routing: Router-on-a-Stick (ROAS) or SVIs on Multilayer switches.Routing Protocol: ```bashrouter ospf 1network 192.168.10.0 0.0.0.255 area 0network 10.1.1.0 0.0.0.3 area 0
-3. Security & ServicesNAT/PAT: To allow private internal IPs to access the public internet.DHCP: Automated IP assignment for all end-user workstations.SSH: Secure remote management enabled on all networking devices.📸 Screenshots(Include your Packet Tracer export images here)Full Topology ViewSuccessful PING/ICMP Tests (End-to-End Connectivity)Simulation Mode Traffic Flow📂 How to UseDownload the .pkt file from this repository.Open the file in Cisco Packet Tracer (v8.0 or higher recommended).Wait for the STP convergence (amber lights turn green).Test connectivity by pinging between different sites via the CLI or the PDU tool.
+# Multi-Site Network Design & Configuration (Cisco Packet Tracer)
+
+## 📌 Project Overview
+
+This project demonstrates the **design and implementation of a three-site interconnected network** using **Cisco Packet Tracer**. The network is built to ensure **reliability, scalability, and secure communication** between geographically separated locations.
+
+The project simulates a real-world enterprise network where multiple branches communicate efficiently using proper IP addressing, routing, and basic security practices.
+
+---
+
+## 🏗️ Network Architecture
+
+* **Number of Sites:** 3 (Site A, Site B, Site C)
+* **Topology:** Multi-site enterprise network
+* **Interconnection:** Routers connecting each site
+* **End Devices:** PCs, switches, and servers (if applicable)
+
+Each site operates as an independent local network while maintaining seamless communication with other sites.
+
+---
+
+## ⚙️ Key Features
+
+* Static routing between all three networks
+* Logical IP addressing and subnetting
+* Inter-site communication verification using ICMP (ping)
+* Scalable design allowing easy addition of new sites
+* Improved reliability through structured network layout
+* Secure and organized traffic flow between locations
+
+---
+
+## 🧰 Technologies & Tools Used
+
+* **Cisco Packet Tracer**
+* Cisco Routers & Switches
+* Static Routing
+* IPv4 Addressing & Subnetting
+
+---
+
+## 📂 Project Files
+
+```
+📁 Multi-Site-Network-Design
+ ├── 📄 Multi_Site_Network.pkt
+ ├── 📁 Screenshots
+ │    ├── topology.png
+ │    ├── siteA_ping.png
+ │    ├── siteB_ping.png
+ │    └── siteC_ping.png
+ └── 📄 README.md
+```
+
+---
+
+## 🖼️ Screenshots
+
+Screenshots included in this repository show:
+
+* Overall network topology
+* Successful ping tests between sites
+* Device configurations (routers and switches)
+
+> 📸 Refer to the **Screenshots** folder for visual proof of connectivity and configuration.
+
+---
+
+## 🚀 How to Run the Project
+
+1. Download and install **Cisco Packet Tracer**
+2. Clone or download this repository
+3. Open the `.pkt` file using Cisco Packet Tracer
+4. Switch to **Simulation Mode** or **Realtime Mode**
+5. Test connectivity using the **ping** command between sites
+
+---
+
+## 🎯 Learning Outcomes
+
+* Understanding of multi-site network design
+* Hands-on experience with static routing
+* Practical knowledge of enterprise network simulation
+* Improved skills in network troubleshooting and documentation
+
+---
+
+## 👨‍🎓 Author
+
+**Uvidu Kaushan**
+Undergraduate – BICT (Hons)
+University of Sri Jayewardenepura
+
+---
+
+## 📜 License
+
+This project is created for **educational purposes**. Feel free to use and modify it for learning or demonstration.
+
+---
+
+⭐ *If you find this project useful, consider giving it a star on GitHub!*
